@@ -1,4 +1,4 @@
-CREATE TABLE `address` (
+CREATE TABLE `Lyte`.`address` (
   `id` int NOT NULL AUTO_INCREMENT,
   `address_1` varchar(45) DEFAULT NULL,
   `address_2` varchar(45) DEFAULT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE `address` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE `customer` (
+CREATE TABLE `Lyte`.`customer` (
   `id` int NOT NULL AUTO_INCREMENT,
   `first_name` varchar(45) DEFAULT NULL,
   `last_name` varchar(45) DEFAULT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE `customer` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE `order` (
+CREATE TABLE `Lyte`.`order` (
   `id` int NOT NULL AUTO_INCREMENT,
   `order_number` varchar(45) DEFAULT NULL,
   `customer_id` int DEFAULT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE `order` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE `order_line_items` (
+CREATE TABLE `Lyte`.`order_line_items` (
   `id` int NOT NULL AUTO_INCREMENT,
   `item_id` int DEFAULT NULL,
   `quantity` int DEFAULT NULL,
@@ -36,14 +36,14 @@ CREATE TABLE `order_line_items` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE `order_type` (
+CREATE TABLE `Lyte`.`order_type` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `date_created` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE `order_type_status` (
+CREATE TABLE `Lyte`.`order_type_status` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `order_type_id` int DEFAULT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE `order_type_status` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE `return` (
+CREATE TABLE `Lyte`.`return` (
   `id` int NOT NULL AUTO_INCREMENT,
   `date_created` datetime DEFAULT CURRENT_TIMESTAMP,
   `employee_id` int DEFAULT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE `return` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE `return_process_procedure` (
+CREATE TABLE `Lyte`.`return_process_procedure` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `description` mediumtext,
@@ -76,7 +76,7 @@ CREATE TABLE `return_process_procedure` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE `return_type` (
+CREATE TABLE `Lyte`.`return_type` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `description` mediumtext,
@@ -85,7 +85,7 @@ CREATE TABLE `return_type` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE `item` (
+CREATE TABLE `Lyte`.`item` (
 	`id` int NOT NULL AUTO_INCREMENT,
     `name` varchar(45) NOT NULL,
     `description_1` varchar(255) DEFAULT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE `item` (
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `item_details` (
+CREATE TABLE `Lyte`.`item_details` (
 	`id` int NOT NULL AUTO_INCREMENT,
     `item_id` int NOT NULL,
     `serial_number` varchar(255) DEFAULT NULL,
@@ -116,7 +116,7 @@ CREATE TABLE `item_details` (
     PRIMARY KEY (`id`) 
 );
 
-CREATE TABLE `item_type` (
+CREATE TABLE `Lyte`.`item_type` (
 	`id` int NOT NULL AUTO_INCREMENT,
     `name` varchar(255) NOT NULL,
     `description` varchar(255) DEFAULT NULL,
@@ -125,7 +125,7 @@ CREATE TABLE `item_type` (
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `supplier` (
+CREATE TABLE `Lyte`.`supplier` (
 	`id` INT NOT NULL AUTO_INCREMENT,
     `name` varchar(255) NOT NULL,
     `poc_1_id` int DEFAULT NULL,
@@ -136,7 +136,7 @@ CREATE TABLE `supplier` (
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `purchase_order` (
+CREATE TABLE `Lyte`.`purchase_order` (
 	`id` INT NOT NULL AUTO_INCREMENT,
     `po_number` varchar(255) NOT NULL,
     `date_created` DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -156,14 +156,14 @@ CREATE TABLE `purchase_order` (
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `receiver` (
+CREATE TABLE `Lyte`.`receiver` (
 	`id` int NOT NULL AUTO_INCREMENT,
     `employee_id` int NOT NULL,
     `isActive` TINYINT NOT NULL,
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `purchase_order_line_item` (
+CREATE TABLE `Lyte`.`purchase_order_line_item` (
 	`id` int NOT NULL AUTO_INCREMENT,
     `item_id` int NOT NULL,
     `serial_number` varchar(255) DEFAULT NULL,
