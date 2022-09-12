@@ -174,3 +174,8 @@ CREATE TABLE `Lyte`.`purchase_order_line_item` (
     PRIMARY KEY (`id`)
 );
 
+ALTER TABLE `Lyte`.`item` 
+ADD COLUMN `height` DECIMAL(11,4) NULL AFTER `version`,
+ADD COLUMN `weight` DECIMAL(11,4) NULL AFTER `height`,
+ADD COLUMN `length` DECIMAL(11,4) NULL AFTER `weight`,
+ADD COLUMN `depth` DECIMAL(11,4) NULL AFTER `length`;
